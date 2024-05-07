@@ -10,4 +10,6 @@ public interface IArrayService {
 
     Array getArrayById(Long id);
     List<Integer> serve(int Q, Long id);
+
+
 }

@@ -11,7 +11,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.lang.Integer.parseInt;
 
 @Service
 @AllArgsConstructor
@@ -45,12 +44,12 @@ public class ArrayService implements IArrayService {
             List<Integer> B = new ArrayList<>();
             int divisor = P[q];
 
-            List<Integer> divisibles = new ArrayList<>(A.stream().filter(a -> a % divisor == 0).toList());
-            List<Integer> noDivisibles = new ArrayList<>(A.stream().filter(a -> a % divisor != 0).toList());
+            List<Integer> divisible = new ArrayList<>(A.stream().filter(a -> a % divisor == 0).toList());
+            List<Integer> notDivisible = new ArrayList<>(A.stream().filter(a -> a % divisor != 0).toList());
 
-            List<Integer> tempAi =  new ArrayList<>(noDivisibles);
-            Collections.reverse(divisibles);
-            B.addAll(divisibles);
+            List<Integer> tempAi =  new ArrayList<>(notDivisible);
+            Collections.reverse(divisible);
+            B.addAll(divisible);
             A = tempAi;
             result.addAll(B);
             Ai = tempAi;
